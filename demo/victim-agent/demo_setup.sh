@@ -5,6 +5,8 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
 cd "$HERE"
 set -a; . ../.env; set +a
 
+: "${ANTHROPIC_API_KEY:?You need to set ANTHROPIC_API_KEY in demo/.env (CrabTrap judge). cp .env.example .env and fill it in.}"
+: "${OPENAI_API_KEY:?You need to set OPENAI_API_KEY in demo/.env (victim gptme agent). cp .env.example .env and fill it in.}"
 : "${EXFIL_HOST:=crypto-price-api-demo.vercel.app}"
 : "${VICTIM_TOKEN:?set VICTIM_TOKEN in ../.env (CrabTrap proxy token)}"
 
